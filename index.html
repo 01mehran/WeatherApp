@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Weather App</title>
+    <!-- Icon Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images.png" type="image/x-icon">
+    <!-- Custom Css Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Javascript Link-->
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <main>
+        <form>
+            <input type="text" placeholder="Enter your country name" id="input">
+            <button id="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <div class="countryWrapper">
+            <p id="countryName">Afghanistan</p>
+            <img loading="lazy" src="https://flagsapi.com/AF/shiny/64.png" alt="Country flag" id="countryFlag">
+        </div>
+        <div class="weatherIcon">
+            <img loading="lazy" src="https://openweathermap.org/img/wn/04n@4x.png" alt="Weather Status"
+                id="weatherStatus">
+        </div>
+        <div class="tempratureWrapper">
+            <p id="temprature">31°C</p>
+            <p id="description">clear</p>
+        </div>
+        <footer>
+            <!-- _1 -->
+            <article>
+                <span>Wind</span>
+                <i class="fa-solid fa-wind"></i>
+                <span id="wind">2.23%</span>
+            </article>
+            <!-- _2 -->
+            <article>
+                <span>Humidity</span>
+                <i class="fa-solid fa-droplet"></i>
+                <span id="humidity">14%</span>
+            </article>
+            <!-- _3 -->
+            <article>
+                <span>Pressure</span>
+                <i class="fa-solid fa-gauge"></i>
+                <span id="pressure">1008hPa</span>
+            </article>
+            <!-- _4 -->
+            <article>
+                <span>Clouds</span>
+                <i class="fa-solid fa-cloud"></i>
+                <span id="clouds">0%</span>
+            </article>
+        </footer>
+    </main>
+
+</body>
+
+</html>

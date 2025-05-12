@@ -1,0 +1,174 @@
+:root {
+  --lightGray1: #dcdcdc;
+  --lightGray2: #e9e9e9;
+  --lightGray3: #f9f9f9;
+  --darkGray: #5553;
+  --semiBlack: rgba(0, 0, 0, 0.7);
+  --green: green;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: var(--semiBlack);
+}
+body::selection {
+  color: var(--green);
+  background-color: var(--lightGray2);
+}
+body {
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    var(--lightGray1) 50%,
+    var(--lightGray2) 50%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 30rem;
+  max-width: 100%;
+  background-color: var(--lightGray3);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 5 30px var(--darkGray);
+  transition: transform 0.3s ease;
+}
+main.error {
+  animation: errorEffect 0.3s linear 1;
+}
+@keyframes errorEffect {
+  0% {
+    transform: translate(100px, 5px);
+  }
+  25% {
+    transform: translate(-5px, 0);
+  }
+  50% {
+    transform: translate(8px, 2px);
+  }
+  75% {
+    transform: translate(-2px, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+main form {
+  border: 1px solid var(--darkGray);
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 2px var(--darkGray);
+  transition: all 0.3s ease;
+}
+main form:focus-within {
+  box-shadow: 0 2px 1px var(--green);
+}
+
+main form input {
+  flex: 1;
+  border-radius: 2rem;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  padding-inline: 1.2rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  caret-color: var(--green);
+}
+
+main form button {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  padding-right: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+main form button:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px var(--green));
+}
+main form button:active {
+  transform: scale(1);
+}
+main .countryWrapper {
+  margin-top: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main .countryWrapper p {
+  font-size: 1.8rem;
+}
+main .countryWrapper img {
+  width: 3.5rem;
+  object-fit: contain;
+}
+main .weatherIcon {
+  max-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+main .weatherIcon img {
+  width: 16rem;
+  filter: drop-shadow(0 0 30px var(--darkGray));
+}
+main .tempratureWrapper {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.2rem;
+  margin-top: 2rem;
+}
+footer article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+  gap: 1.3rem;
+  border: 1px solid var(--darkGray);
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 3px var(--darkGray);
+  transition: all 0.3s ease;
+}
+footer article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 2px var(--green);
+}
+
+/*----------- Mobile Screen */
+@media screen and (width < 480px) {
+  body {
+    background: var(--lightGray3);
+  }
+
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer article {
+    font-size: 1.3rem;
+    box-shadow: 0 2px 2px var(--green);
+  }
+}
+@media screen and (width < 380px) {
+  footer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
