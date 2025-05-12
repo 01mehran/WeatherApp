@@ -166,6 +166,10 @@ footer article:hover {
     font-size: 1.3rem;
     box-shadow: 0 2px 2px var(--green);
   }
+  footer article:hover {
+    transform: translateY(0);
+    box-shadow: 0 2px 2px var(--green);
+  }
 }
 @media screen and (width < 380px) {
   footer {
